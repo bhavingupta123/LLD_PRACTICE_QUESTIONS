@@ -20,7 +20,12 @@ public class TicketRepo {
    }
 
    public TicketModel fetchTicket(String id){
-       return ticketModelList.get(1);
+       for (TicketModel ticket : ticketModelList) {
+           if (id.equals(ticket.getIssuedAt())) {
+               return ticket;
+           }
+       }
+       return null;
    }
 
 }

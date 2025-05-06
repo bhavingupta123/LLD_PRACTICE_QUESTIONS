@@ -14,6 +14,7 @@ public class ParkingRepo {
     }
 
     public void deleteParkingSpot(String parkingId){
+        parkingModelList.removeIf(spot -> spot.getId().equals(parkingId));
     }
 
     public List<ParkingModel> getParkingModelList() {
@@ -22,11 +23,23 @@ public class ParkingRepo {
 
     public void setParkingSpotAsOccupied(String parkingSpotId){
         // mark the parking spot as occupied
+        for (ParkingModel model : parkingModelList) {
+            if (model.getId().equals(parkingSpotId)) {
+                model.setAvailable(false);
+                break;
+            }
+        }
 
     }
 
     public void setParkingSpotAsFree(String parkingSpotId){
         // mark the parking spot as occupied
+        for (ParkingModel model : parkingModelList) {
+            if (model.getId().equals(parkingSpotId)) {
+                model.setAvailable(true);
+                break;
+            }
+        }
 
     }
 }

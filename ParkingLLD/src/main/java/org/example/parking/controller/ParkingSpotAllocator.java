@@ -20,6 +20,10 @@ public class ParkingSpotAllocator {
     public void occupySpot(ParkingSpotType type){
         service.issueTicket(type, ticketRepo, parkingRepo);
     };
-    public void emptySpot(){};
+
+    public void emptySpot(String ticketId){
+        service.checkoutTicket(ticketId);
+        System.out.println("Parking spot freed for ticket: " + ticketId);
+    }
 
 }
