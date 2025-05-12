@@ -1,0 +1,27 @@
+BOOK MY SHOW LLD
+
+REQ
+- SHOULD BE ABLE TO SEE THEATRES
+- SCREENS AND WHICH MOVIES IS GOING ON
+- BOOK A TICKET/ CANCEL A TICKET
+
+
+THEATER
+- NAME
+- ADDRESS
+- id
+
+SCREENS
+- seats
+- id
+- number
+- name
+- movie
+- timing
+
+Seats
+- seat no.
+- seat id
+- booked/available
+- cost of seat
+
